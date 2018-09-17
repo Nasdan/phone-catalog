@@ -4,7 +4,12 @@
   "description": "Frontend for phone-catalog app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "if-env NODE_ENV=production && npm run build:prod || npm run build:dev",
+    "build:dev": "webpack --config ./config/webpack/dev.js --mode development",
+    "build:prod": "webpack --config ./config/webpack/prod.js --mode production",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:dev": "webpack-dev-server --config ./config/webpack/dev.js --mode development",
+    "start:prod": "node server"
   },
   "repository": {
     "type": "git",
@@ -20,5 +25,29 @@
   "bugs": {
     "url": "https://github.com/Nasdan/phone-catalog/issues"
   },
-  "homepage": "https://github.com/Nasdan/phone-catalog#readme"
+  "homepage": "https://github.com/Nasdan/phone-catalog#readme",
+  "dependencies": {
+    "@material-ui/core": "^3.1.0",
+    "babel-polyfill": "^6.26.0",
+    "express": "^4.16.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
+    "react-router-dom": "^4.3.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "html-webpack-plugin": "^3.2.0",
+    "if-env": "^1.0.4",
+    "react-hot-loader": "^4.3.8",
+    "webpack": "^4.19.0",
+    "webpack-cli": "^3.1.0",
+    "webpack-merge": "^4.1.4"
+  }
 }

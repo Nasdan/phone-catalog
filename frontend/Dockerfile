@@ -1,0 +1,20 @@
+FROM node:8
+
+ARG NODE_ENV
+ENV NODE_ENV=${NODE_ENV}
+
+ARG REST_ENV
+ENV REST_ENV=${REST_ENV}
+
+ARG BACKENDEND_HOST
+ARG BACKENDEND_PORT
+ENV BASE_API_URL="${BACKENDEND_HOST}:${BACKENDEND_PORT}"
+
+WORKDIR /usr/frontend
+COPY package*.json ./
+RUN npm i --quiet
+
+COPY ./src ./src
+
+RUN npm run build
+CMD ["npm", "start"]
