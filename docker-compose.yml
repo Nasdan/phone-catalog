@@ -5,5 +5,7 @@ services:
       context: ./backend
       args:
         - BACKEND_PORT=${BACKEND_PORT}
+        - FRONTEND_HOST=${FRONTEND_HOST}
+        - FRONTEND_PORT=${FRONTEND_PORT}
     ports:
       - ${BACKEND_PORT}:${BACKEND_PORT}

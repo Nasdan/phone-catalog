@@ -5,6 +5,4 @@ Exercise about simple product catalog app
 
 - Download or clone this repository.
 
-- Execute `docker-compose build`
-
-- Execute `docker-compose up`
+- Execute `docker-compose up --build`

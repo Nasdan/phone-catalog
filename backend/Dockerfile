@@ -2,10 +2,13 @@ FROM node:8
 
 ARG BACKEND_PORT
 ENV PORT=${BACKEND_PORT}
+ARG FRONTEND_HOST
+ARG FRONTEND_PORT
+ENV CORS_ORIGIN="${FRONTEND_HOST}:${FRONTEND_PORT}"
 
 WORKDIR /usr/backend
 COPY package*.json ./
-RUN npm i
+RUN npm i --quiet
 
 COPY ./src ./src
 
