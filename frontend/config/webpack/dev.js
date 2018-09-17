@@ -13,8 +13,8 @@ module.exports = merge(base, {
   devServer: {
     contentBase: resolveFromRootPath('dist'),
     inline: true,
-    host: 'localhost',
-    port: 8080,
+    host: '0.0.0.0',
+    port: process.env.PORT,
     stats: 'minimal',
     hot: true,
   },
