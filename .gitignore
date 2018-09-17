@@ -1,0 +1,8 @@
+node_modules
+.DS_Store
+dist/
+*.orig
+.idea/
+package-lock.json
+.awcache/
+yarn.lock

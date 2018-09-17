@@ -1,0 +1,29 @@
+{
+  "name": "phone-catalog-backend",
+  "version": "1.0.0",
+  "description": "Backend for phone-catalog app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nasdan/phone-catalog.git"
+  },
+  "keywords": [
+    "phone",
+    "catalog",
+    "backend"
+  ],
+  "author": "nasdan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nasdan/phone-catalog/issues"
+  },
+  "homepage": "https://github.com/Nasdan/phone-catalog#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3"
+  }
+}
