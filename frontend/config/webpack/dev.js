@@ -4,6 +4,7 @@ const base = require('./base');
 const { resolveFromRootPath } = require('../helpers');
 
 module.exports = merge(base, {
+  mode: 'development',
   devtool: 'inline-source-map',
   output: {
     path: resolveFromRootPath('dist'),

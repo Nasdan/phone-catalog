@@ -9,3 +9,15 @@ services:
         - FRONTEND_PORT=${FRONTEND_PORT}
     ports:
       - ${BACKEND_PORT}:${BACKEND_PORT}
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        - FRONTEND_PORT=${FRONTEND_PORT}
+        - NODE_ENV=${NODE_ENV}
+        - API_ENV=${API_ENV}
+        - BACKEND_HOST=${BACKEND_HOST}
+        - BACKEND_PORT=${BACKEND_PORT}
+    ports:
+      - ${FRONTEND_PORT}:${FRONTEND_PORT}
