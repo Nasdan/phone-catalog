@@ -16,6 +16,7 @@ module.exports = {
       'prop-types',
       'react',
       'react-dom',
+      'react-emotion',
       'react-router-dom',
     ],
   },
