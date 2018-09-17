@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const env = require('./env');
+const setUpRoutes = require('./routes');
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(
   })
 );
 
+setUpRoutes(app);
 app.listen(env.PORT);
 
 console.log(`Running on port: ${env.PORT}`);
