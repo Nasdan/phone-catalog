@@ -8,6 +8,10 @@ export const card = css`
   min-height: 20rem;
 `;
 
+export const cardActionArea = css`
+  width: 100%;
+`;
+
 export const cardContent = css`
   display: flex;
   flex-direction: column;
