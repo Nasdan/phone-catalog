@@ -13,6 +13,7 @@ module.exports = {
     vendor: [
       'babel-polyfill',
       '@material-ui/core',
+      'axios',
       'prop-types',
       'react',
       'react-dom',

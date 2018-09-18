@@ -14,13 +14,16 @@ ARG BACKEND_PORT
 ENV BASE_API_URL="${BACKEND_HOST}:${BACKEND_PORT}"
 
 WORKDIR /usr/frontend
-COPY package*.json ./
-RUN npm i --quiet
 
+COPY package.json ./
 COPY ./config ./config
 COPY ./server ./server
 COPY ./src ./src
 COPY .babelrc ./
 
+ENV NPM_CONFIG_PRODUCTION=false
+RUN npm i
+
+ENV NPM_CONFIG_PRODUCTION=true
 RUN npm run build
 CMD ["npm", "start"]

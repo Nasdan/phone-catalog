@@ -8,9 +8,9 @@ ARG FRONTEND_PORT
 ENV CORS_ORIGIN="${FRONTEND_HOST}:${FRONTEND_PORT}"
 
 WORKDIR /usr/backend
-COPY package*.json ./
-RUN npm i --quiet
 
+COPY package.json ./
 COPY ./src ./src
+RUN npm i
 
 CMD ["npm", "start"]
