@@ -1,26 +1,35 @@
 import React from 'react';
-import { createEmptyState } from './container.business';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { phoneDetailVMSelector } from './selectors';
+import { fetchPhoneById } from './actions';
 import { PhoneDetailPage } from './page';
-import { phoneAPI } from '../../../rest-api/api/phone';
-import { mapPhoneModelToViewModel } from './mappers';
 
-export class PhoneDetailContainer extends React.PureComponent {
-  state = createEmptyState();
-
+class InnerPhoneDetailContainer extends React.PureComponent {
   componentDidMount() {
-    this.loadPhone();
-  }
-
-  loadPhone = () => {
     const id = Number(this.props.match.params.id);
-    phoneAPI.fetchPhoneById(id).then(phone => {
-      this.setState({
-        phone: mapPhoneModelToViewModel(phone),
-      });
-    });
-  };
+    this.props.fetchPhoneById(id);
+  }
 
   render() {
-    return <PhoneDetailPage phone={this.state.phone} />;
+    return <PhoneDetailPage phone={this.props.phone} />;
   }
 }
+
+InnerPhoneDetailContainer.propTypes = {
+  phone: PropTypes.object.isRequired,
+  fetchPhoneById: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = state => ({
+  phone: phoneDetailVMSelector(state),
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchPhoneById: id => dispatch(fetchPhoneById(id)),
+});
+
+export const PhoneDetailContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(InnerPhoneDetailContainer);

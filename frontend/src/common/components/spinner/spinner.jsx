@@ -4,14 +4,13 @@ import { promiseTrackerHoc } from 'react-promise-tracker';
 import { PropagateLoader } from 'react-spinners';
 import { spinner, loader } from './spinner.styles';
 
-const InnerSpinner = props => 
-
-    props.trackedPromiseInProgress && (
-      <div className={spinner}>
-        <div className={loader}>
-          <PropagateLoader color="#ffffff" size="25" />
-        </div>
+const InnerSpinner = props =>
+  props.trackedPromiseInProgress && (
+    <div className={spinner}>
+      <div className={loader}>
+        <PropagateLoader color="#ffffff" size={25} />
       </div>
+    </div>
   );
 
 InnerSpinner.propTypes = {

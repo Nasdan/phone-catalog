@@ -1,4 +1,4 @@
-import { phoneListSelector } from './selectors';
+import { phoneListSelector, phoneDetailSelector } from './selectors';
 
 describe('src/selectors specs', () => {
   describe('phoneListSelector', () => {
@@ -30,6 +30,36 @@ describe('src/selectors specs', () => {
 
       // Assert
       expect(result).toEqual(state.phoneList);
+    });
+  });
+
+  describe('phoneDetailSelector', () => {
+    it('should return empty object phoneDetail from state', () => {
+      // Arrange
+      const state = {
+        phoneDetail: {},
+      };
+
+      // Act
+      const result = phoneDetailSelector(state);
+
+      // Assert
+      expect(result).toEqual(state.phoneDetail);
+    });
+
+    it('should return phoneDetail with values from state', () => {
+      // Arrange
+      const state = {
+        phoneDetail: {
+          id: 1,
+        },
+      };
+
+      // Act
+      const result = phoneDetailSelector(state);
+
+      // Assert
+      expect(result).toEqual(state.phoneDetail);
     });
   });
 });

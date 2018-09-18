@@ -10,7 +10,7 @@ const getMockStore = configureStore(middlewares);
 describe('pages/phones/list/actions specs', () => {
   describe('fetchPhones', () => {
     it(`should call to fetchPhones from phoneAPI and updatePhones action creator 
-      when feeding phones array and server response is successfully`, async () => {
+      when server response is successfully and return phones array`, async () => {
       // Arrange
       const expectedPhones = [
         {
@@ -36,7 +36,7 @@ describe('pages/phones/list/actions specs', () => {
     });
 
     it(`should call to fetchPhones from phoneAPI and console.error 
-      when feeding phones array and server response is failed`, async () => {
+      when server response is failed`, async () => {
       // Arrange
       const expectedError = 'Test error';
 
