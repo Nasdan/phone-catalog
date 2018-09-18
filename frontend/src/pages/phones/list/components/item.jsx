@@ -10,17 +10,17 @@ import {
   card,
   cardActionArea,
   cardContent,
-  image,
   title,
   price,
 } from './item.styles';
+import { imageContainer } from '../../../../common/styles/image';
 
 export const Item = props => (
   <li className={cx(item, props.className)}>
     <Card className={card}>
       <CardActionArea className={cardActionArea} onClick={handleClick(props)}>
         <CardContent className={cardContent}>
-          <div className={image}>
+          <div className={imageContainer}>
             <img src={props.phone.imageUrl} />
           </div>
           <Typography className={title}>{props.phone.title}</Typography>

@@ -18,17 +18,6 @@ export const cardContent = css`
   align-items: center;
 `;
 
-export const image = css`
-  width: 100%;
-  max-width: 18rem;
-  height: auto;
-  margin-bottom: 2rem;
-  & img {
-    max-width: 100%;
-    min-width: 100%;
-  }
-`;
-
 export const title = css`
   align-self: flex-end;
 `;

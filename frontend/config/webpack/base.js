@@ -9,7 +9,7 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   entry: {
-    app: ['./index.jsx'],
+    app: ['./index.jsx', './common/styles/global.js'],
     vendor: [
       'babel-polyfill',
       '@material-ui/core',
