@@ -7,6 +7,6 @@ export const imageContainer = css`
   margin-bottom: 2rem;
   & img {
     max-width: 100%;
-    min-width: 100%;
+    min-height: 100%;
   }
 `;
