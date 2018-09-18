@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`common/components/spinner specs should render InnerSpinner component with trackedPromiseInProgress equals false 1`] = `
+<InnerSpinner
+  trackedPromiseInProgress={false}
+/>
+`;

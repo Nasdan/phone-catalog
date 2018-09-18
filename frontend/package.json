@@ -8,7 +8,8 @@
     "build:dev": "webpack --config ./config/webpack/dev.js",
     "build:prod": "webpack --config ./config/webpack/prod.js",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:dev": "env-cmd development webpack-dev-server --config ./config/webpack/dev.js",
+    "start:dev": "env-cmd dev-mock webpack-dev-server --config ./config/webpack/dev.js",
+    "start:api": "env-cmd dev-api webpack-dev-server --config ./config/webpack/dev.js",
     "start:prod": "node server",
     "test": "jest -c ./config/test/jest.json --verbose",
     "test:watch": "jest -c ./config/test/jest.json --verbose --watchAll -i"
@@ -39,7 +40,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
-    "react-promise-tracker": "^1.1.0",
+    "react-promise-tracker": "^1.0.2",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-spinners": "^0.4.5",

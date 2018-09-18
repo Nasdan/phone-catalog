@@ -1,19 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { promiseTrackerHoc } from 'react-promise-tracker';
-import { ScaleLoader } from 'react-spinners';
+import { PropagateLoader } from 'react-spinners';
 import { spinner, loader } from './spinner.styles';
 
-const InnerSpinner = props =>
-  props.trackedPromiseInProgress && (
-    <div className={spinner}>
-      <div className={loader}>
-        <ScaleLoader />
+const InnerSpinner = props => 
+
+    props.trackedPromiseInProgress && (
+      <div className={spinner}>
+        <div className={loader}>
+          <PropagateLoader color="#ffffff" size="25" />
+        </div>
       </div>
-    </div>
   );
 
-  InnerSpinner.propTypes = {
+InnerSpinner.propTypes = {
   trackedPromiseInProgress: PropTypes.bool.isRequired,
 };
 
