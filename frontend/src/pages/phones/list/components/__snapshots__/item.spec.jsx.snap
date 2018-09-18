@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pages/phones/list/components/item specs should render as expected when feeding props 1`] = `
+<li
+  className="css-o9b79t test className"
+>
+  <WithStyles(Card)
+    className="css-a0h9s2"
+  >
+    <WithStyles(CardActionArea)
+      className="css-8atqhb"
+      onClick={[Function]}
+    >
+      <WithStyles(CardContent)
+        className="css-dvxtzn"
+      >
+        <div
+          className="css-1fv1iua"
+        >
+          <img
+            src="test imageUrl"
+          />
+        </div>
+        <WithStyles(Typography)
+          className="css-56sg73"
+        >
+          test title
+        </WithStyles(Typography)>
+        <h2
+          className="css-56sg73"
+        >
+          test price
+        </h2>
+      </WithStyles(CardContent)>
+    </WithStyles(CardActionArea)>
+  </WithStyles(Card)>
+</li>
+`;

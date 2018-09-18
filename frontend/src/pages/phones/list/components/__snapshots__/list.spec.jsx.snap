@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pages/phones/list/components/list specs should render as expected when feeding props 1`] = `
+<ul
+  className="css-r1kb16"
+>
+  <Item
+    className="css-l9u6wf"
+    key="1"
+    onClick={[MockFunction]}
+    phone={
+      Object {
+        "id": 1,
+        "imageUrl": "test imageUrl",
+        "price": "test price",
+        "title": "test title",
+      }
+    }
+  />
+</ul>
+`;
