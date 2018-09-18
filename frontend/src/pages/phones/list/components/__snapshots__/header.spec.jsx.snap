@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pages/phones/list/components/header specs should render as expected 1`] = `
+<h1>
+  Phone Catalog
+</h1>
+`;
