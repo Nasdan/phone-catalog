@@ -1,28 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { routes } from '../../../common/constants/routes';
 import { buildRoute } from '../../../common/helpers/routes';
-import { phoneAPI } from '../../../rest-api/api/phone';
-import { mapPhonesModelToViewModel } from './mappers';
 import { PhoneListPage } from './page';
+import { phoneListVMSelector } from './selectors';
+import { fetchPhones } from './actions';
 
 class InnerPhoneListContainer extends React.PureComponent {
-  state = {
-    phones: [],
-  };
-
   componentDidMount() {
-    this.loadPhones();
+    this.props.fetchPhones();
   }
-
-  loadPhones = () => {
-    phoneAPI.fetchPhones().then(phones => {
-      this.setState({
-        phones: mapPhonesModelToViewModel(phones),
-      });
-    });
-  };
 
   handleItemClick = phone => {
     const route = buildRoute(routes.phones.detail, { id: phone.id });
@@ -32,7 +21,7 @@ class InnerPhoneListContainer extends React.PureComponent {
   render() {
     return (
       <PhoneListPage
-        phones={this.state.phones}
+        phones={this.props.phones}
         onItemClick={this.handleItemClick}
       />
     );
@@ -40,7 +29,23 @@ class InnerPhoneListContainer extends React.PureComponent {
 }
 
 InnerPhoneListContainer.propTypes = {
+  phones: PropTypes.array.isRequired,
+  fetchPhones: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired,
 };
 
-export const PhoneListContainer = withRouter(InnerPhoneListContainer);
+const mapStateToProps = (state, ownProps) => ({
+  phones: phoneListVMSelector(state),
+  history: ownProps.history,
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchPhones: () => dispatch(fetchPhones()),
+});
+
+export const PhoneListContainer = withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(InnerPhoneListContainer)
+);
