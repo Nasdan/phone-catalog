@@ -42,6 +42,10 @@ Exercise about simple product catalog app
 
 - `npm run start:api`
 
+### After run
+
+- After run any mode, open a browser with `http://localhost:8080` url.
+
 # About Lemoncode
 
 We are a team of long-term experienced freelance developers, established as a group in 2010.
