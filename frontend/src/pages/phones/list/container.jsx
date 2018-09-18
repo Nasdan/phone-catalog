@@ -1,7 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
+import { routes } from '../../../common/constants/routes';
+import { buildRoute } from '../../../common/helpers/routes';
 import { PhoneListPage } from './page';
 
-export class PhoneListContainer extends React.PureComponent {
+class InnerPhoneListContainer extends React.PureComponent {
   state = {
     phones: [],
   };
@@ -54,7 +58,23 @@ export class PhoneListContainer extends React.PureComponent {
     }, 2000);
   };
 
+  handleItemClick = phone => {
+    const route = buildRoute(routes.phones.detail, { id: phone.id });
+    this.props.history.push(route);
+  };
+
   render() {
-    return <PhoneListPage phones={this.state.phones} />;
+    return (
+      <PhoneListPage
+        phones={this.state.phones}
+        onItemClick={this.handleItemClick}
+      />
+    );
   }
 }
+
+InnerPhoneListContainer.propTypes = {
+  history: PropTypes.object.isRequired,
+};
+
+export const PhoneListContainer = withRouter(InnerPhoneListContainer);

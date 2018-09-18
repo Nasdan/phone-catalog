@@ -18,22 +18,25 @@ import {
 export const Item = props => (
   <li className={cx(item, props.className)}>
     <Card className={card}>
-      <CardActionArea className={cardActionArea}>
+      <CardActionArea className={cardActionArea} onClick={handleClick(props)}>
         <CardContent className={cardContent}>
           <div className={image}>
             <img src={props.phone.imageUrl} />
           </div>
           <Typography className={title}>{props.phone.title}</Typography>
-          <Typography className={price}>
-            <h2>{props.phone.price}</h2>
-          </Typography>
+          <h2 className={price}>{props.phone.price}</h2>
         </CardContent>
       </CardActionArea>
     </Card>
   </li>
 );
 
+const handleClick = props => () => {
+  props.onClick(props.phone);
+};
+
 Item.propTypes = {
   phone: PropTypes.object.isRequired,
   className: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
