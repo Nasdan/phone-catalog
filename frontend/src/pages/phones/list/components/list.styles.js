@@ -11,7 +11,8 @@ export const list = css`
 `;
 
 export const item = css`
-  padding: 2rem;
+  padding-bottom: 2rem;
+  padding-right: 2rem;
   box-sizing: border-box;
   flex-basis: 100%;
 
