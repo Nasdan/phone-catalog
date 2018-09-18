@@ -1,0 +1,5 @@
+{
+  "rootDir": "../../",
+  "setupFiles": ["<rootDir>/config/test/polyfills.js"],
+  "restoreMocks": true
+}
