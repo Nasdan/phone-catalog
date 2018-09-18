@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pages/phones/detail/components/thumbnail specs should render as expected when feeding imageUrl 1`] = `
+<WithStyles(Card)>
+  <WithStyles(CardContent)>
+    <div
+      className="css-1fv1iua"
+    >
+      <img
+        src="test imageUrl"
+      />
+    </div>
+  </WithStyles(CardContent)>
+</WithStyles(Card)>
+`;

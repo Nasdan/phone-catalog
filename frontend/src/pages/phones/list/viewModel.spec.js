@@ -1,6 +1,6 @@
 import { createEmptyPhone } from './viewModel';
 
-describe('pages/phones/detail/viewModel specs', () => {
+describe('pages/phones/list/viewModel specs', () => {
   describe('createEmptyPhone', () => {
     it('should return an object with default phone values when call it', () => {
       // Arrange

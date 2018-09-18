@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pages/phones/detail/components/description specs should render as expected when feeding phone 1`] = `
+<div
+  className="css-19n6oew"
+>
+  <h3
+    className="css-14pd6bw"
+  >
+    test title
+  </h3>
+  <p
+    className="css-dhvz4c"
+  >
+    Color 
+  </p>
+  <p
+    className="css-1kxrhf3"
+  >
+    test description
+  </p>
+  <p
+    className="css-130s0i6"
+  >
+    test price
+  </p>
+</div>
+`;
